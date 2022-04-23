@@ -7,6 +7,7 @@ export const Container = styled.div`
   border-radius: 4px;
   display: flex;
   background: white;
+  margin-bottom: 0.625rem;
 `;
 
 export const Input = styled.input`

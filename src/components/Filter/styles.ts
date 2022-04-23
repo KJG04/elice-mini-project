@@ -4,6 +4,7 @@ export const Container = styled.div`
   background: white;
   display: flex;
   border: 1px solid rgb(225, 226, 228);
+  margin-bottom: 0.75rem;
 `;
 
 export const ChipContainer = styled.div`
