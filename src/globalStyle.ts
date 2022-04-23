@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 const globalStyle = css`
   html {
     font-size: 16px;
+    background: rgb(240, 241, 243);
   }
   body,
   ::placeholder {

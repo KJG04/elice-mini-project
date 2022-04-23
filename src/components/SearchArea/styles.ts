@@ -6,6 +6,7 @@ export const Container = styled.div`
   border: 1px solid rgb(201, 202, 204);
   border-radius: 4px;
   display: flex;
+  background: white;
 `;
 
 export const Input = styled.input`
