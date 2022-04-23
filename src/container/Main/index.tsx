@@ -1,5 +1,5 @@
-import CourseList from "../../components/CourseList";
-import Header from "../../components/Header";
+import CourseList from "../../components/Body";
+import Header from "../../components/SearchArea";
 
 const MainContainer = () => {
   return (
