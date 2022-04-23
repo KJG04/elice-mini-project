@@ -7,8 +7,7 @@ const globalStyle = css`
   }
   body,
   ::placeholder {
-    font-family: "Pretendard", "Malgun Gothic", "Helvetica", "Myriad Pro",
-      "Arial", sans-serif;
+    font-family: "Pretendard", "Malgun Gothic", "Helvetica", "Myriad Pro", "Arial", sans-serif;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: auto;

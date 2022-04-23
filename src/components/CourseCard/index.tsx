@@ -15,8 +15,8 @@ const CourseCard = () => {
       <div>
         <S.DescriptionContainer>
           <S.Description>
-            인스타그램과 유튜브 웹사이트를 직접 내 손으로 한땀 한땀 따라
-            만들면서 자바스크립트와 리액트로 웹 프론트엔드를 개발해봅니다.
+            인스타그램과 유튜브 웹사이트를 직접 내 손으로 한땀 한땀 따라 만들면서 자바스크립트와
+            리액트로 웹 프론트엔드를 개발해봅니다.
           </S.Description>
         </S.DescriptionContainer>
       </div>
