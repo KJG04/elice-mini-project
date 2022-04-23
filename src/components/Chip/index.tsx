@@ -1,9 +1,16 @@
+import { FC } from "react";
 import * as S from "./styles";
 
-const Chip = () => {
+interface PropsType {
+  children?: React.ReactNode;
+  onClick: () => void;
+  active: boolean;
+}
+
+const Chip: FC<PropsType> = ({ children, onClick, active }) => {
   return (
-    <S.Container>
-      <S.Lable>과목</S.Lable>
+    <S.Container onClick={onClick} className={active ? "active" : undefined}>
+      <S.Lable>{children}</S.Lable>
     </S.Container>
   );
 };

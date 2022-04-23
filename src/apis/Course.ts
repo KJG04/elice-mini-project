@@ -1,4 +1,4 @@
-import ChipData from "../types/ChipData";
+import ChipType from "../types/ChipData";
 import Course from "../types/Course";
 import request from "../utils/axios";
 
@@ -9,7 +9,7 @@ interface GetCourseListResponse {
 
 export const getCourseList = async (
   title: string,
-  selected: ChipData[],
+  selected: ChipType[],
   offset: number,
   count: number
 ) => {
