@@ -10,11 +10,12 @@ interface SearchState {
 
 const params = new URLSearchParams(location.search);
 const priceParams = params.getAll("price");
+const keywordParam = params.get("keyword");
 
 const searchState = atom<SearchState>({
   key: atomKeys.search,
   default: {
-    title: "",
+    title: keywordParam || "",
     chips: [
       {
         id: "free",
