@@ -2,15 +2,16 @@ import Body from "../../components/Body";
 import Filter from "../../components/Filter";
 import Pagination from "../../components/Pagination";
 import SearchArea from "../../components/SearchArea";
+import * as S from "./styles";
 
 const MainContainer = () => {
   return (
-    <div>
+    <S.Container>
       <SearchArea />
       <Filter />
       <Body />
       <Pagination />
-    </div>
+    </S.Container>
   );
 };
 
