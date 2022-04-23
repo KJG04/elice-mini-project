@@ -1,14 +1,6 @@
 import ChipData from "../types/ChipData";
+import Course from "../types/Course";
 import request from "../utils/axios";
-
-interface Course {
-  id: number;
-  enroll_type: number;
-  is_free: boolean;
-  title: string;
-  short_description: string;
-  logo_file_url: string;
-}
 
 interface GetCourseListResponse {
   courses: Course[];
