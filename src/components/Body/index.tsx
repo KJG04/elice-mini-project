@@ -1,4 +1,6 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
+import { useSetRecoilState } from "recoil";
+import lengthState from "../../atoms/Length";
 import count from "../../constants/Count";
 import { useCourseList } from "../../queries/Course";
 import CourseCard from "../CourseCard";
@@ -7,6 +9,7 @@ import * as S from "./styles";
 
 const Body = () => {
   const { data, isLoading, isError, error } = useCourseList();
+  const setLength = useSetRecoilState(lengthState);
 
   const skeleton = useMemo(
     () =>
@@ -15,6 +18,10 @@ const Body = () => {
         .map((_, index) => <CourseCardSkeleton key={index} />),
     []
   );
+
+  useEffect(() => {
+    setLength(data?.data.course_count);
+  }, [data, setLength]);
 
   if (isError) {
     return <div>오류 발생: {`${error}`}</div>;

@@ -14,7 +14,7 @@ const SearchArea = () => {
 
       setTimeout(() => {
         setKeyword((prev) => {
-          setSearch((p) => ({ ...p, title: prev }));
+          setSearch((p) => ({ ...p, title: prev, offset: 0 }));
 
           return prev;
         });

@@ -21,7 +21,7 @@ const Filter = () => {
           return v;
         });
 
-        return { ...prev, chips };
+        return { ...prev, chips, offset: 0 };
       });
     },
     [setSearch]
