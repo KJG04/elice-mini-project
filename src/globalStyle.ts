@@ -1,13 +1,20 @@
 import { css } from "@emotion/react";
 
 const globalStyle = css`
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
+  html {
+    font-size: 16px;
+  }
+  body,
+  ::placeholder {
+    font-family: "Pretendard", "Malgun Gothic", "Helvetica", "Myriad Pro",
+      "Arial", sans-serif;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: auto;
+  }
+  input,
+  ::placeholder {
+    font-size: 0.875rem;
   }
 `;
 
