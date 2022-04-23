@@ -10,8 +10,10 @@ export const Count = styled.div`
 `;
 
 export const Grid = styled.div`
+  margin-top: 0.75rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 16px 16px;
 
   @media screen and (min-width: 769px) and (max-width: 1280px) {
     grid-template-columns: repeat(3, 1fr);
