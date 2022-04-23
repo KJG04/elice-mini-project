@@ -1,5 +1,14 @@
+import { Global } from "@emotion/react";
+import { MainContainer } from "./container";
+import globalStyle from "./globalStyle";
+
 function App() {
-  return <div>hello world!</div>;
+  return (
+    <>
+      <Global styles={globalStyle} />
+      <MainContainer />
+    </>
+  );
 }
 
 export default App;
