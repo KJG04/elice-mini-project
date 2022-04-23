@@ -5,7 +5,7 @@ import { RecoilRoot } from "recoil";
 import { MainContainer } from "./container";
 import globalStyle from "./globalStyle";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 
 function App() {
   return (
