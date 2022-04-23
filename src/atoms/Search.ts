@@ -8,13 +8,26 @@ interface SearchState {
   offset: number;
 }
 
+const params = new URLSearchParams(location.search);
+const priceParams = params.getAll("price");
+
 const searchState = atom<SearchState>({
   key: atomKeys.search,
   default: {
     title: "",
     chips: [
-      { id: "free", data: { enroll_type: 0, is_free: true }, active: false, text: "무료" },
-      { id: "paid", data: { enroll_type: 0, is_free: false }, active: false, text: "유료" },
+      {
+        id: "free",
+        data: { enroll_type: 0, is_free: true },
+        active: priceParams.includes("free"),
+        text: "무료",
+      },
+      {
+        id: "paid",
+        data: { enroll_type: 0, is_free: false },
+        active: priceParams.includes("paid"),
+        text: "유료",
+      },
     ],
     offset: 0,
   },
