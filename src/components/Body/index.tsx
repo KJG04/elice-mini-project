@@ -1,5 +1,5 @@
-const CourseList = () => {
+const Body = () => {
   return <div>this is body</div>;
 };
 
-export default CourseList;
+export default Body;

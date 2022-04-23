@@ -1,5 +1,5 @@
-const Header = () => {
+const SearchArea = () => {
   return <div>this is header</div>;
 };
 
-export default Header;
+export default SearchArea;
