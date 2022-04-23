@@ -17,6 +17,7 @@ export const PageButton = styled.button`
   font-weight: 700;
   font-size: 0.875rem;
   transition: all 150ms ease-in-out 0s;
+  background: transparent;
 
   &:hover {
     color: #524fa1;
@@ -29,6 +30,7 @@ export const PageButton = styled.button`
 `;
 
 export const ArrowContainer = styled.button`
+  background: transparent;
   border: none;
   padding: 0;
   cursor: pointer;
