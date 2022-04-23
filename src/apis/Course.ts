@@ -17,7 +17,7 @@ export const getCourseList = async (
 
   const filterConditions = JSON.stringify({
     $and: [{ title: `%${title}%` }],
-    $or: [...selected.map((value) => ({ ...value.data }))],
+    $or: [...selected.filter((value) => value.active).map((value) => ({ ...value.data }))],
   });
 
   const params = { filter_conditions: filterConditions, offset, count };

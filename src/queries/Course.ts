@@ -8,7 +8,7 @@ export const useCourseList = () => {
   const search = useRecoilValue(searchState);
   const count = 20;
 
-  return useQuery([queryKeys.courseList], () =>
+  return useQuery([queryKeys.courseList, search.title, search.offset, search.chips], () =>
     getCourseList(search.title, search.chips, search.offset, count)
   );
 };
