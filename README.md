@@ -43,3 +43,4 @@ useQurey key에 searchState의 값을 넣어줘서 searchState가 바뀔때마�
 ### Body
 - useCourseList를 사용해 course list를 가져와서 보여주는 역할을 합니다.
 - 오류가 날시 `오류 발생: (error 로그)`를 보여줍니다.
+- 가져오는 중일때 20개의 skeleton을 보여줍니다
