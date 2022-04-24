@@ -1,23 +1,21 @@
 import * as S from "./styles";
 import icon from "../../assets/search-icon.svg";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
 import searchState from "../../atoms/Search";
 
 const SearchArea = () => {
   const [search, setSearch] = useRecoilState(searchState);
   const [keyword, setKeyword] = useState(search.title);
+  const keywordRef = useRef(keyword);
 
   const onChangeHandler = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setKeyword(e.target.value);
+      keywordRef.current = e.target.value;
 
       setTimeout(() => {
-        setKeyword((prev) => {
-          setSearch((p) => ({ ...p, title: prev, offset: 0 }));
-
-          return prev;
-        });
+        setSearch((p) => ({ ...p, title: keywordRef.current, offset: 0 }));
       }, 300);
     },
     [setSearch]
