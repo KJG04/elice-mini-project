@@ -27,3 +27,15 @@ export const Grid = styled.div`
     grid-template-columns: repeat(1, 1fr);
   }
 `;
+
+export const Message = styled.div`
+  text-align: center;
+  color: #999;
+  font-size: 16px;
+  margin-top: 16px;
+`;
+
+export const NoImage = styled.img`
+  margin: 0 auto;
+  display: block;
+`;

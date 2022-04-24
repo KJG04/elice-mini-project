@@ -55,7 +55,7 @@ const Pagination = () => {
 
   return (
     <>
-      {count && (
+      {count && count > 0 ? (
         <S.Container>
           <S.ArrowContainer onClick={() => onArrow(-1)}>
             <FontAwesomeIcon
@@ -82,6 +82,8 @@ const Pagination = () => {
             </S.ArrowContainer>
           )}
         </S.Container>
+      ) : (
+        <div></div>
       )}
     </>
   );
