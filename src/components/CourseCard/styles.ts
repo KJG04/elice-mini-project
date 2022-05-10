@@ -25,6 +25,7 @@ export const Title = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
+  word-break: break-all;
 `;
 
 export const TitleContainer = styled.div`
@@ -42,6 +43,7 @@ export const Description = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
+  word-break: break-all;
 `;
 
 export const DescriptionContainer = styled.div`

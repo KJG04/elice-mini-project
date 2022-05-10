@@ -1,25 +1,24 @@
 import * as S from "./styles";
 import icon from "../../assets/search-icon.svg";
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
 import searchState from "../../atoms/Search";
+import useDebounce from "../../hooks/useDebounce";
 
 const SearchArea = () => {
   const [search, setSearch] = useRecoilState(searchState);
   const [keyword, setKeyword] = useState(search.title);
   const keywordRef = useRef(keyword);
+  const output = useDebounce(keyword, 1000);
 
-  const onChangeHandler = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      setKeyword(e.target.value);
-      keywordRef.current = e.target.value;
+  const onChangeHandler = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setKeyword(e.target.value);
+    keywordRef.current = e.target.value;
+  }, []);
 
-      setTimeout(() => {
-        setSearch((p) => ({ ...p, title: keywordRef.current, offset: 0 }));
-      }, 300);
-    },
-    [setSearch]
-  );
+  useEffect(() => {
+    setSearch((p) => ({ ...p, title: output, offset: 0 }));
+  }, [output, setSearch]);
 
   return (
     <S.Container>

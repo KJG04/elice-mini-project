@@ -2,7 +2,8 @@ import * as S from "./styles";
 import LevelIcon from "../../assets/level.svg";
 import ClassIcon from "../../assets/class.svg";
 import CalenderIcon from "../../assets/calender.svg";
-import { FC, useMemo } from "react";
+import NoImage from "../../assets/no-image.png";
+import { FC, useMemo, useRef } from "react";
 import Course from "../../types/Course";
 
 const CourseCard: FC<Course> = ({
@@ -12,6 +13,8 @@ const CourseCard: FC<Course> = ({
   short_description,
   title,
 }) => {
+  const logoRef = useRef<HTMLImageElement>(null);
+
   const label = useMemo(() => {
     if (enroll_type === 4) {
       return "구독";
@@ -23,6 +26,14 @@ const CourseCard: FC<Course> = ({
 
     return "유료";
   }, [enroll_type, is_free]);
+
+  const onError = () => {
+    if (!logoRef.current) {
+      return;
+    }
+
+    logoRef.current.src = NoImage;
+  };
 
   return (
     <S.Container>
@@ -52,7 +63,7 @@ const CourseCard: FC<Course> = ({
             <span>기간 : 무제한</span>
           </S.IconText>
         </S.IconTextContainer>
-        <S.Logo alt="로고" src={logo_file_url} />
+        <S.Logo ref={logoRef} alt="로고" onError={onError} src={logo_file_url || NoImage} />
       </S.InfoContainer>
     </S.Container>
   );

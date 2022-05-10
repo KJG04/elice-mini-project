@@ -42,7 +42,7 @@ const Pagination = () => {
       }
       if (offset + off < 0) {
         return;
-      } else if (offset + off >= maxPage - 1) {
+      } else if (offset + off >= maxPage) {
         return;
       }
 
